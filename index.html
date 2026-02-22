@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment</title>
+
+    <!-- Tailwind + Daisyui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google font-Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-base-200">
+
+    <!-- header section -->
+    <header class="py-5 w-[80%]   mx-auto space-y-3">
+      <h1 class="text-[2rem] font-bold">Job Application Tracker</h1>
+      <div class="grid grid-cols-3 gap-5">
+
+
+        <div class=" bg-white p-4 rounded-md">
+          <p class="text-neutral/50 text-[14px]">Total</p>
+          <p id="total-count" class="font-bold text-xl text-neutral" >0</p>
+        </div>
+
+
+        <div class=" bg-white p-4 rounded-md">
+          <p class="text-neutral/50 text-[14px]" >Interview</p>
+          <p id="total-count" class="text-accent text-xl font-bold">0</p>
+        </div>
+
+
+        <div class=" bg-white p-4 rounded-md">
+          <p class="text-neutral/50 text-[14px]">Rejected</p>
+          <p id="total-count" class="font-bold text-xl text-secondary">0</p>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- main section -->
+     <main class="w-[80%] py-5 mx-auto space-y-6">
+
+      <hr class="border-gray-300">
+
+      <div class="flex justify-between">
+        <h3 class=" font-semibold">Available Jobs</h3>
+        <p class="text-neutral/60"> <span id="jobs-count">0 </span> jobs</p>
+      </div>
+
+      <!-- buttons sections -->
+       <div class="flex gap-5">
+        <button onclick="toggleButton(allBtn)" id="allBtn" class="btn btn-primary">All</button>
+        <button onclick="toggleButton(interview)" id="interview" class="btn btn-soft">Interview</button>
+        <button onclick="toggleButton(rejected)" id="rejected" class="btn btn-soft">Rejected</button>
+       </div>
+
+
+       <!-- card section -->
+        <section id="card-container" class="space-y-6"> 
+
+          <!-- card 1 -->
+          <div class="bg-white p-5 rounded-xl flex justify-between">
+
+
+
+            <div class=" space-y-5 ">
+
+              <div>
+                <h3 class="font-semibold">Mobile First Corp</h3>
+                <p class="text-neutral/50 text-[14px]">React Native Developer</p>
+              </div>
+              
+              <div class="text-neutral/60">
+                <p class="text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+              </div>
+              <div>
+                <button class="btn btn-soft text-gray-600">Not Applied</button>
+              </div>
+              <p class="text-[14px] text-neutral/50">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+              
+              <div class="flex gap-3">
+                <button class="btn  text-accent border-accent">interview</button>
+                <button class="btn text-secondary border-secondary">Rejected</button>
+              </div>
+              
+            </div>
+            
+              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+                <i class="fa-regular fa-trash-can "></i>
+              </dib>
+
+
+              
+          </div>
+
+          <!-- card 2 -->
+           <div class="bg-white p-5 rounded-xl flex justify-between">
+
+
+
+            <div class=" space-y-5 ">
+
+              <div>
+                <h3 class="font-semibold">Mobile First Corp</h3>
+                <p class="text-neutral/50 text-[14px]">React Native Developer</p>
+              </div>
+              
+              <div class="text-neutral/60">
+                <p class="text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+              </div>
+              <div>
+                <button class="btn btn-soft text-gray-600">Not Applied</button>
+              </div>
+              <p class="text-[14px] text-neutral/50">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+              
+              <div class="flex gap-3">
+                <button class="btn  text-accent border-accent">interview</button>
+                <button class="btn text-secondary border-secondary">Rejected</button>
+              </div>
+              
+            </div>
+            
+              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+                <i class="fa-regular fa-trash-can "></i>
+              </dib>
+
+
+              
+          </div>
+          <!-- card 3 -->
+          <!-- card 4 -->
+          <!-- card 5 -->
+          <!-- card 6 -->
+          <!-- card 7 -->
+          <!-- card 8 -->
+        </section>
+     </main>
+
+
+     <!-- js link -->
+      <script src="./scriptl.js"></script>
+  </body>
+</html>
