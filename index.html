@@ -53,13 +53,13 @@
 
         <div class=" bg-white p-4 rounded-md">
           <p class="text-neutral/50 text-[14px]" >Interview</p>
-          <p id="total-count" class="text-accent text-xl font-bold">0</p>
+          <p id="total-count-interview" class="text-accent text-xl font-bold">0</p>
         </div>
 
 
         <div class=" bg-white p-4 rounded-md">
           <p class="text-neutral/50 text-[14px]">Rejected</p>
-          <p id="total-count" class="font-bold text-xl text-secondary">0</p>
+          <p id="total-count-rejected" class="font-bold text-xl text-secondary">0</p>
         </div>
 
       </div>
@@ -78,10 +78,16 @@
 
       <!-- buttons sections -->
        <div class="flex gap-5">
-        <button onclick="toggleButton(allBtn)" id="allBtn" class="btn btn-primary">All</button>
-        <button onclick="toggleButton(interview)" id="interview" class="btn btn-soft">Interview</button>
-        <button onclick="toggleButton(rejected)" id="rejected" class="btn btn-soft">Rejected</button>
+        <button onclick="toggleButton('allBtn')" id="allBtn" class="btn btn-primary">All</button>
+        <button onclick="toggleButton('interview')" id="interview" class="btn btn-soft">Interview</button>
+        <button onclick="toggleButton('rejected')" id="rejected" class="btn btn-soft">Rejected</button>
        </div>
+
+
+       <!-- interview card -->
+        <section id="interview-card" class="hidden space-y-6">
+          
+        </section>
 
 
        <!-- card section -->
@@ -95,28 +101,28 @@
             <div class=" space-y-5 ">
 
               <div>
-                <h3 class="font-semibold">Mobile First Corp</h3>
-                <p class="text-neutral/50 text-[14px]">React Native Developer</p>
+                <h3 class="font-semibold company-name">Mobile First Corp</h3>
+                <p class="text-neutral/50 text-[14px] position">React Native Developer</p>
               </div>
               
               <div class="text-neutral/60">
-                <p class="text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-[14px] place">Remote • Full-time • $130,000 - $175,000</p>
               </div>
               <div>
-                <button class="btn btn-soft text-gray-600">Not Applied</button>
+                <button class="btn btn-soft text-gray-600 abalable applicent">Not Applied</button>
               </div>
-              <p class="text-[14px] text-neutral/50">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+              <p class="text-[14px] text-neutral/50 description">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
               
               <div class="flex gap-3">
-                <button class="btn  text-accent border-accent">interview</button>
-                <button class="btn text-secondary border-secondary">Rejected</button>
+                <button class="btn  text-accent border-accent interview-btn">interview</button>
+                <button class="btn text-secondary border-secondary rejected-btn">Rejected</button>
               </div>
               
             </div>
             
-              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
                 <i class="fa-regular fa-trash-can "></i>
-              </dib>
+              </div>
 
 
               
@@ -130,28 +136,28 @@
             <div class=" space-y-5 ">
 
               <div>
-                <h3 class="font-semibold">Mobile First Corp</h3>
-                <p class="text-neutral/50 text-[14px]">React Native Developer</p>
+                <h3 class="font-semibold company-name">WebFlow Agency</h3>
+                <p class="text-neutral/50 text-[14px] position">Web Designer & Developer</p>
               </div>
               
               <div class="text-neutral/60">
-                <p class="text-[14px]">Remote • Full-time • $130,000 - $175,000</p>
+                <p class="text-[14px] place">Los Angeles, CA • art-time • $80,000 - $120,000</p>
               </div>
               <div>
-                <button class="btn btn-soft text-gray-600">Not Applied</button>
+                <button class="btn btn-soft text-gray-600 abalable applicent">Not Applied</button>
               </div>
-              <p class="text-[14px] text-neutral/50">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+              <p class="text-[14px] text-neutral/50 description">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
               
               <div class="flex gap-3">
-                <button class="btn  text-accent border-accent">interview</button>
-                <button class="btn text-secondary border-secondary">Rejected</button>
+                <button class="btn  text-accent border-accent interview-btn">interview</button>
+                <button class="btn text-secondary border-secondary rejected-btn">Rejected</button>
               </div>
               
             </div>
             
-              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
                 <i class="fa-regular fa-trash-can "></i>
-              </dib>
+              </div>
 
 
               
