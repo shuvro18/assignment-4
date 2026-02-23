@@ -1,5 +1,6 @@
 let interviewArr = [];
 let rejectedArr = [];
+let currentStatus = "all";
 
 const jobCount = document.getElementById("jobs-count");
 const totalCount = document.getElementById("total-count");
@@ -38,12 +39,18 @@ function toggleButton(id){
     rejected.classList.add("btn-soft");
 
     const currentBtn = document.getElementById(id);
+
+
+    currentStatus = id
+    console.log(currentStatus);
+
     currentBtn.classList.remove("btn-soft")
     currentBtn.classList.add("btn-primary")
 
     if(id === 'interview'){
         cardContainer.classList.add("hidden");
         interviewSection.classList.remove("hidden");
+        interviewRender()
 
         if(interviewArr.length === 0){
             interviewSection.innerHTML = `
@@ -60,6 +67,26 @@ function toggleButton(id){
     }else if(id === 'allBtn'){
         cardContainer.classList.remove("hidden");
         interviewSection.classList.add("hidden");
+
+
+    }else if(id === 'rejected'){
+
+      cardContainer.classList.add("hidden");
+      interviewSection.classList.remove("hidden");
+      rejectedRender();
+      
+      if(rejectedArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
+        }
+
     }
 }
 
@@ -93,7 +120,52 @@ cardContainer.addEventListener("click",function(event){
         if(!findMach){
             interviewArr.push(cardInfo);
         }
-        interviewRender ()
+
+        rejectedArr = rejectedArr.filter(item => item.companyName !== cardInfo.companyName);
+
+        if(currentStatus === 'rejected'){
+
+          rejectedRender()
+        }
+
+        calculation()
+    }
+
+    else if(event.target.classList.contains("rejected-btn")){
+
+        const parentnode = event.target.parentNode.parentNode.parentNode;
+        const companyName = parentnode.querySelector(".company-name").innerText;
+        const position = parentnode.querySelector(".position").innerText;
+        const place = parentnode.querySelector(".place").innerText;
+        const description = parentnode.querySelector(".description").innerText;
+        const applicent = parentnode.querySelector(".applicent");
+        parentnode.querySelector(".applicent").classList.add('text-secondary', 'border-secondary');
+        parentnode.querySelector(".applicent").classList.remove('text-gray-600');
+        parentnode.querySelector(".applicent").innerText = "Rejected";
+        
+        
+        const cardInfo = {
+            companyName,
+            position,
+            place,
+            applicent,
+            description
+        }
+        
+        const findMach = rejectedArr.find(item => item.companyName == cardInfo.companyName)
+
+        if(!findMach){
+            rejectedArr.push(cardInfo);
+        }
+
+        interviewArr = interviewArr.filter(item => item.companyName !== cardInfo.companyName);
+
+        if(currentStatus === 'interview'){
+
+          interviewRender();
+
+        }
+
 
         calculation()
     }
@@ -146,3 +218,50 @@ function interviewRender (){
     }
 }
 
+
+
+function rejectedRender (){
+    interviewSection.innerHTML = "";
+
+    for(const rejectedArrs of rejectedArr){
+       
+        let div = document.createElement("div");
+        div.className = "bg-white p-5 rounded-xl flex justify-between";
+        div.innerHTML =`
+        
+
+
+
+            <div class=" space-y-5 ">
+
+              <div>
+                <h3 class="font-semibold company-name">${rejectedArrs.companyName}</h3>
+                <p class="text-neutral/50 text-[14px] position">${rejectedArrs.position}</p>
+              </div>
+              
+              <div class="text-neutral/60">
+                <p class="text-[14px] place">${rejectedArrs.place}</p>
+              </div>
+              <div>
+                <button class="btn btn-soft text-secondary border-secondary applicent">Rejected</button>
+              </div>
+              <p class="text-[14px] text-neutral/50 description">${rejectedArrs.description}</p>
+              
+              <div class="flex gap-3">
+                <button class="btn  text-accent border-accent interview-btn">interview</button>
+                <button class="btn text-secondary border-secondary rejected-btn">Rejected</button>
+              </div>
+              
+            </div>
+            
+              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+                <i class="fa-regular fa-trash-can "></i>
+              </dib>
+
+
+              
+          
+        `
+        interviewSection.appendChild(div);
+    }
+}
