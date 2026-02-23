@@ -112,7 +112,6 @@ main.addEventListener("click",function(event){
     if(event.target.classList.contains("interview-btn")){
 
         const parentnode = event.target.parentNode.parentNode.parentNode;
-        console.log(parentnode)
         const companyName = parentnode.querySelector(".company-name").innerText;
         const position = parentnode.querySelector(".position").innerText;
         const place = parentnode.querySelector(".place").innerText;
