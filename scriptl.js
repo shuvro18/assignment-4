@@ -49,9 +49,9 @@ function toggleButton(id){
     currentBtn.classList.add("btn-primary")
 
     if(id === 'interview'){
+        interviewRender()
         cardContainer.classList.add("hidden");
         interviewSection.classList.remove("hidden");
-        interviewRender()
 
         if(interviewArr.length === 0){
             interviewSection.innerHTML = `
@@ -72,9 +72,9 @@ function toggleButton(id){
 
     }else if(id === 'rejected'){
 
+      rejectedRender();
       cardContainer.classList.add("hidden");
       interviewSection.classList.remove("hidden");
-      rejectedRender();
       
       if(rejectedArr.length === 0){
             interviewSection.innerHTML = `
@@ -126,14 +126,22 @@ main.addEventListener("click",function(event){
 
         if(currentStatus === 'rejected'){
 
-          rejectedRender()
+          rejectedRender();
+
+          if(rejectedArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
+        }
         }
 
-        if(currentStatus === 'interview'){
-
-          interviewRender();
-
-        }
+       
 
         calculation()
     }
@@ -171,12 +179,21 @@ main.addEventListener("click",function(event){
 
           interviewRender();
 
+          if(interviewArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
         }
 
-        if(currentStatus === 'rejected'){
-
-          rejectedRender()
         }
+
+        
 
 
         calculation()
