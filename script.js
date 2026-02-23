@@ -12,6 +12,9 @@ const interviewCount = document.getElementById("total-count-interview");
 const rejectedCount = document.getElementById("total-count-rejected");
 const interviewSection =document.getElementById("interview-card");
 const main = document.querySelector("main");
+const countClass = document.querySelector(".count");
+const countId = document.getElementById("count");
+console.log(countClass)
 
 
 
@@ -23,6 +26,16 @@ function calculation(){
     interviewCount.innerText = interviewArr.length;
     rejectedCount.innerText = rejectedArr.length;
     jobCount.innerText =cardContainer. childElementCount
+
+    if(currentStatus === "interview"){
+      countClass.classList.remove("hidden");
+      countId.innerText = interviewArr.length;
+    }else if(currentStatus === "rejected"){
+      countClass.classList.remove("hidden");
+      countId.innerText = rejectedArr.length;
+    }else{
+      countClass.classList.add("hidden");
+    }
 
 }
 calculation()
@@ -89,6 +102,9 @@ function toggleButton(id){
         }
 
     }
+
+
+    calculation()
 }
 
 
@@ -108,11 +124,11 @@ main.addEventListener("click",function(event){
         parentnode.querySelector(".applicent").innerText = "Interview";
         
         
+        
         const cardInfo = {
             companyName,
             position,
             place,
-            applicent,
             description
         }
         
@@ -163,7 +179,6 @@ main.addEventListener("click",function(event){
             companyName,
             position,
             place,
-            applicent,
             description
         }
         
