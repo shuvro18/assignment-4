@@ -44,6 +44,19 @@ function toggleButton(id){
     if(id === 'interview'){
         cardContainer.classList.add("hidden");
         interviewSection.classList.remove("hidden");
+
+        if(interviewArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
+        }
+
     }else if(id === 'allBtn'){
         cardContainer.classList.remove("hidden");
         interviewSection.classList.add("hidden");
@@ -51,14 +64,21 @@ function toggleButton(id){
 }
 
 
+
+
 cardContainer.addEventListener("click",function(event){
     if(event.target.classList.contains("interview-btn")){
+
         const parentnode = event.target.parentNode.parentNode.parentNode;
         const companyName = parentnode.querySelector(".company-name").innerText;
-        const position =parentnode.querySelector(".position").innerText;
-        const place =parentnode.querySelector(".place").innerText;
-        const applicent =parentnode.querySelector(".applicent").innerText;
-        const description =parentnode.querySelector(".description").innerText;
+        const position = parentnode.querySelector(".position").innerText;
+        const place = parentnode.querySelector(".place").innerText;
+        const description = parentnode.querySelector(".description").innerText;
+        const applicent = parentnode.querySelector(".applicent");
+        parentnode.querySelector(".applicent").classList.add('text-accent', 'border-accent');
+        parentnode.querySelector(".applicent").classList.remove('text-gray-600');
+        parentnode.querySelector(".applicent").innerText = "Interview";
+        
         
         const cardInfo = {
             companyName,
@@ -84,6 +104,7 @@ function interviewRender (){
     interviewSection.innerHTML = "";
 
     for(const interviewArrs of interviewArr){
+       
         let div = document.createElement("div");
         div.className = "bg-white p-5 rounded-xl flex justify-between";
         div.innerHTML =`
@@ -102,7 +123,7 @@ function interviewRender (){
                 <p class="text-[14px] place">${interviewArrs.place}</p>
               </div>
               <div>
-                <button class="btn btn-soft text-gray-600 abalable applicent">Not Applied</button>
+                <button class="btn btn-soft text-accent border-accent applicent">Interview</button>
               </div>
               <p class="text-[14px] text-neutral/50 description">${interviewArrs.description}</p>
               
@@ -124,3 +145,4 @@ function interviewRender (){
         interviewSection.appendChild(div);
     }
 }
+
