@@ -11,6 +11,7 @@ const cardContainer = document.getElementById("card-container");
 const interviewCount = document.getElementById("total-count-interview");
 const rejectedCount = document.getElementById("total-count-rejected");
 const interviewSection =document.getElementById("interview-card");
+const main = document.querySelector("main");
 
 
 
@@ -93,7 +94,7 @@ function toggleButton(id){
 
 
 
-cardContainer.addEventListener("click",function(event){
+main.addEventListener("click",function(event){
     if(event.target.classList.contains("interview-btn")){
 
         const parentnode = event.target.parentNode.parentNode.parentNode;
@@ -126,6 +127,12 @@ cardContainer.addEventListener("click",function(event){
         if(currentStatus === 'rejected'){
 
           rejectedRender()
+        }
+
+        if(currentStatus === 'interview'){
+
+          interviewRender();
+
         }
 
         calculation()
@@ -164,6 +171,11 @@ cardContainer.addEventListener("click",function(event){
 
           interviewRender();
 
+        }
+
+        if(currentStatus === 'rejected'){
+
+          rejectedRender()
         }
 
 
@@ -206,9 +218,9 @@ function interviewRender (){
               
             </div>
             
-              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
                 <i class="fa-regular fa-trash-can "></i>
-              </dib>
+              </div>
 
 
               
@@ -254,9 +266,9 @@ function rejectedRender (){
               
             </div>
             
-              <dib class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
                 <i class="fa-regular fa-trash-can "></i>
-              </dib>
+              </div>
 
 
               
