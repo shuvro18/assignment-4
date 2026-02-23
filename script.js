@@ -14,7 +14,6 @@ const interviewSection =document.getElementById("interview-card");
 const main = document.querySelector("main");
 const countClass = document.querySelector(".count");
 const countId = document.getElementById("count");
-console.log(countClass)
 
 
 
@@ -56,7 +55,6 @@ function toggleButton(id){
 
 
     currentStatus = id
-    console.log(currentStatus);
 
     currentBtn.classList.remove("btn-soft")
     currentBtn.classList.add("btn-primary")
@@ -114,6 +112,7 @@ main.addEventListener("click",function(event){
     if(event.target.classList.contains("interview-btn")){
 
         const parentnode = event.target.parentNode.parentNode.parentNode;
+        console.log(parentnode)
         const companyName = parentnode.querySelector(".company-name").innerText;
         const position = parentnode.querySelector(".position").innerText;
         const place = parentnode.querySelector(".place").innerText;
