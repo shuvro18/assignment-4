@@ -118,7 +118,7 @@ main.addEventListener("click",function(event){
         const description = parentnode.querySelector(".description").innerText;
         const applicent = parentnode.querySelector(".applicent");
         parentnode.querySelector(".applicent").classList.add('text-accent', 'border-accent');
-        parentnode.querySelector(".applicent").classList.remove('text-gray-600');
+        parentnode.querySelector(".applicent").classList.remove('text-gray-600','text-secondary', 'border-secondary');
         parentnode.querySelector(".applicent").innerText = "Interview";
         
         
@@ -169,7 +169,7 @@ main.addEventListener("click",function(event){
         const description = parentnode.querySelector(".description").innerText;
         const applicent = parentnode.querySelector(".applicent");
         parentnode.querySelector(".applicent").classList.add('text-secondary', 'border-secondary');
-        parentnode.querySelector(".applicent").classList.remove('text-gray-600');
+        parentnode.querySelector(".applicent").classList.remove('text-gray-600','text-accent','border-accent');
         parentnode.querySelector(".applicent").innerText = "Rejected";
         
         
