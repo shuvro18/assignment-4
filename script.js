@@ -248,7 +248,7 @@ function interviewRender (){
               
             </div>
             
-              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full delete-button">
                 <i class="fa-regular fa-trash-can "></i>
               </div>
 
@@ -296,7 +296,7 @@ function rejectedRender (){
               
             </div>
             
-              <div class="btn p-3 bg-transparent border-gray-200 rounded-full">
+              <div class="btn p-3 bg-transparent border-gray-200 rounded-full delete-button">
                 <i class="fa-regular fa-trash-can "></i>
               </div>
 
