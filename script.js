@@ -307,3 +307,43 @@ function rejectedRender (){
         interviewSection.appendChild(div);
     }
 }
+
+main.addEventListener("click",function(event){
+
+  if(event.target.closest(".delete-button")){
+    const findCard = event.target.closest(".bg-white");
+    const companyName = findCard.querySelector(".company-name").innerText;
+
+    rejectedArr = rejectedArr.filter(item => item.companyName !== companyName);
+    interviewArr = interviewArr.filter(item => item.companyName !== companyName);
+
+    findCard.remove();
+    calculation();
+
+    if(currentStatus === "interview"){
+      if(interviewArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
+        }
+    }else if(currentStatus === "rejected"){
+      if(rejectedArr.length === 0){
+            interviewSection.innerHTML = `
+            
+            <div class="bg-white p-10 text-center">
+            <img class="mx-auto" src="./jobs.png" alt="">
+            <h2 class="text-[1.5rem]">No jobs available</h2>
+            <p class="text-neutral/50">Check back soon for new job opportunities</p>
+          </div>
+            
+            `
+        }
+    }
+  }
+})
