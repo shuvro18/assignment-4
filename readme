@@ -1,0 +1,34 @@
+; 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
+(getElementById)----->এটা দিয়ে id ধরা হয় |
+(getElementsByClassName)---->এইটা দিয়ে Class ধরা হয় |
+(querySelector)--> class, tag, id সবই ধরতে পারে কিন্তু শুধু একটা |
+(querySelectorAll)--> id, class, tag সবই ধরতে পারে কিন্তু যতগুলো থাকে ঐ নামে      সবগুলো ধরতে পারে
+
+
+; 2. How do you create and insert a new element into the DOM?
+const newTag = document.createElement("p");
+newTag.innerText = "hello";
+
+
+; 3. What is Event Bubbling? And how does it work?
+= এটি Child element থেকে Parent node এর দিকে যায় মানে নিচে থেকে উপরের দিকে যায়
+example: <div>
+            <button>BUTTON</button>
+         </div>
+
+এখানে প্রথমে button থেকে উপরে div এ যাবে তারপরে  উপরে যেতে যেতে document এ চলে যাবে |
+
+
+; 4. What is Event Delegation in JavaScript? Why is it useful?
+= event Delegation হলো parent element এ eventListener বসিয়ে নিচের সব ehild কে নিয়ণ্ত্রন করা
+হাজারটি বাটন এর বদলে মাত্র একটি eventListener লাগে
+
+
+; 5. What is the difference between preventDefault() and stopPropagation() methods?
+preventDefault()---> brouser এর ডিফল্ট আচরণ থামায় 
+example: from tag sumbit করলে pape অটো রিফ্রেশ হয় এটা থামায় তাছাড়া ও আরো অনেক ডিফল্ট কাজকে থামায়
+
+stopPropagation()-->এটি event Bubbling বন্ধ করে
+
+
