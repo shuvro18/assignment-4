@@ -1,34 +1,56 @@
-; 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+Live link : https://shuvro18.github.io/assignment-4/
 
-(getElementById)----->এটা দিয়ে id ধরা হয় |
-(getElementsByClassName)---->এইটা দিয়ে Class ধরা হয় |
-(querySelector)--> class, tag, id সবই ধরতে পারে কিন্তু শুধু একটা |
-(querySelectorAll)--> id, class, tag সবই ধরতে পারে কিন্তু যতগুলো থাকে ঐ নামে      সবগুলো ধরতে পারে
+📋 Job Application Tracker
+A simple and efficient web application designed to help users track the status of their job applications. This project demonstrates core concepts of JavaScript DOM manipulation, event handling, and dynamic UI updates.
 
+🚀 Features
+Job Status Updates: Users can easily update the status of any job to 'Interview' or 'Rejected' by clicking the respective buttons.
 
-; 2. How do you create and insert a new element into the DOM?
-const newTag = document.createElement("p");
-newTag.innerText = "hello";
+Dynamic Filtering: Features a filtering system to view jobs by categories: 'All', 'Interview', and 'Rejected'.
 
+Real-time Counters: The application automatically calculates and displays the total number of jobs and the count for each specific category.
 
-; 3. What is Event Bubbling? And how does it work?
-= এটি Child element থেকে Parent node এর দিকে যায় মানে নিচে থেকে উপরের দিকে যায়
-example: <div>
-            <button>BUTTON</button>
-         </div>
+Delete Functionality: Includes the ability to remove job applications from the tracker entirely using a delete button.
 
-এখানে প্রথমে button থেকে উপরে div এ যাবে তারপরে  উপরে যেতে যেতে document এ চলে যাবে |
+Empty State Handling: Displays a "No jobs available" message and illustration when a filtered category contains no data.
 
+Modern UI/UX: Built with a clean, responsive interface using Tailwind CSS and DaisyUI components.
 
-; 4. What is Event Delegation in JavaScript? Why is it useful?
-= event Delegation হলো parent element এ eventListener বসিয়ে নিচের সব ehild কে নিয়ণ্ত্রন করা
-হাজারটি বাটন এর বদলে মাত্র একটি eventListener লাগে
+🛠 Technologies Used
+HTML5: Used for structuring the application.
 
+Tailwind CSS & DaisyUI: Utilized for modern, responsive styling and pre-built UI components.
 
-; 5. What is the difference between preventDefault() and stopPropagation() methods?
-preventDefault()---> brouser এর ডিফল্ট আচরণ থামায় 
-example: from tag sumbit করলে pape অটো রিফ্রেশ হয় এটা থামায় তাছাড়া ও আরো অনেক ডিফল্ট কাজকে থামায়
+JavaScript (ES6+): Handles the application logic, array management, and DOM updates.
 
-stopPropagation()-->এটি event Bubbling বন্ধ করে
+Font Awesome: Integrated for scalable vector icons.
 
+Google Fonts (Geist): Used for professional typography.
 
+📂 File Structure
+Plaintext
+├── index.html    # Main HTML structure and layout
+├── script.js     # Core application logic and interaction
+├── jobs.png      # Image used for empty state notification
+└── README.md     # Project documentation
+⚙️ How It Works
+1. Initial State: By default, all jobs are listed as "Not Applied" within the main container.
+
+2. Event Delegation: A single event listener is attached to the main section to efficiently handle clicks on "Interview", "Rejected", and "Delete" buttons.
+
+3. Data Management: Selected jobs are stored in specific arrays (interviewArr, rejectedArr) to manage their states dynamically.
+
+4. Dynamic Rendering: When a filter is applied, the application clears the display and re-renders the cards based on the filtered data arrays.
+
+🛠 Installation
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+
+Bash
+git clone https://github.com/your-username/job-application-tracker.git
+2. Navigate to the project folder:
+
+Bash
+cd job-application-tracker
+3. Open index.html in any modern web browser.
