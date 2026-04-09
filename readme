@@ -35,6 +35,7 @@ Plaintext
 ├── script.js     # Core application logic and interaction
 ├── jobs.png      # Image used for empty state notification
 └── README.md     # Project documentation
+```
 ⚙️ How It Works
 1. Initial State: By default, all jobs are listed as "Not Applied" within the main container.
 
