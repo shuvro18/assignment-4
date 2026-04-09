@@ -27,13 +27,14 @@ Font Awesome: Integrated for scalable vector icons.
 
 Google Fonts (Geist): Used for professional typography.
 
-📂 File Structure
-Plaintext
+## 📂 File Structure
+
 ```text
 ├── index.html    # Main HTML structure and layout
 ├── script.js     # Core application logic and interaction
 ├── jobs.png      # Image used for empty state notification
-└── README.md     # Project documentation ```
+└── README.md     # Project documentation
+```
 
 ⚙️ How It Works
 1. Initial State: By default, all jobs are listed as "Not Applied" within the main container.
