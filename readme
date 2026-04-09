@@ -29,6 +29,8 @@ Google Fonts (Geist): Used for professional typography.
 
 📂 File Structure
 Plaintext
+
+```text
 ├── index.html    # Main HTML structure and layout
 ├── script.js     # Core application logic and interaction
 ├── jobs.png      # Image used for empty state notification
